@@ -5,8 +5,8 @@ from PIL import Image
 import io
 
 app = Flask(__name__)
-# Enable CORS for frontend
-CORS(app, resources={r"/*": {"origins": ["http://localhost:5173", "http://127.0.0.1:5173"]}})
+# Enable CORS for frontend across local network
+CORS(app, resources={r"/*": {"origins": "*"}})
 
 import os
 

@@ -85,14 +85,14 @@ function App() {
             </nav>
 
             {/* Main Content - Centered Layout */}
-            <main className="pt-40 pb-20 px-6 w-full flex flex-col items-center overflow-x-hidden">
+            <main className="pt-24 md:pt-40 pb-10 px-4 md:px-6 w-full flex flex-col items-center overflow-x-hidden">
 
                 {/* Centered Heading Section */}
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8 }}
-                    className="text-center mb-20 space-y-6 max-w-4xl"
+                    className="text-center mb-12 md:mb-20 space-y-4 md:space-y-6 max-w-4xl"
                 >
                     <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-sm font-semibold tracking-wide backdrop-blur-sm">
                         <Scan className="w-4 h-4" /> AI-Powered Recognition
@@ -136,7 +136,7 @@ function App() {
                                 {files.length === 0 ? (
                                     <div
                                         {...getRootProps()}
-                                        className={`border-2 border-dashed rounded-2xl h-80 flex flex-col items-center justify-center cursor-pointer transition-all duration-500 ${isDragActive
+                                        className={`border-2 border-dashed rounded-2xl h-56 md:h-80 flex flex-col items-center justify-center cursor-pointer transition-all duration-500 ${isDragActive
                                             ? 'border-cyan-500 bg-cyan-500/10'
                                             : 'border-slate-700 bg-slate-800/30 hover:border-cyan-500/40 hover:bg-slate-800/50'
                                             }`}
@@ -149,7 +149,7 @@ function App() {
                                         <p className="text-sm text-slate-500 mt-2 text-center">Biomedical Imagery (Shielded Formats)</p>
                                     </div>
                                 ) : (
-                                    <div className="relative rounded-2xl overflow-hidden border border-white/10 bg-black/40 h-80 flex items-center justify-center shadow-inner">
+                                    <div className="relative rounded-2xl overflow-hidden border border-white/10 bg-black/40 h-56 md:h-80 flex items-center justify-center shadow-inner">
                                         <img
                                             src={files[0].preview}
                                             alt="Preview"
@@ -181,7 +181,7 @@ function App() {
                     </motion.div>
 
                     {/* Results Section */}
-                    <div className="w-full h-full min-h-[500px]">
+                    <div className="w-full h-full min-h-[400px]">
                         <AnimatePresence mode="wait">
                             {analysisResult ? (
                                 <motion.div
@@ -194,28 +194,28 @@ function App() {
                                 >
                                     <div className="absolute -inset-0.5 bg-gradient-to-r from-emerald-500 to-cyan-500 rounded-3xl blur opacity-20"></div>
                                     <div className="relative h-full bg-slate-900/40 backdrop-blur-2xl border border-white/10 rounded-3xl overflow-hidden shadow-2xl flex flex-col">
-                                        <div className="p-8 border-b border-white/5 bg-emerald-500/5 flex items-center justify-between">
+                                        <div className="p-5 md:p-8 border-b border-white/5 bg-emerald-500/5 flex items-center justify-between">
                                             <div className="flex items-center gap-3">
                                                 <div className="p-2 bg-emerald-500/20 rounded-lg">
                                                     <CheckCircle className="w-6 h-6 text-emerald-400" />
                                                 </div>
-                                                <h3 className="text-2xl font-bold text-white">Detailed Analytics</h3>
+                                                <h3 className="text-xl md:text-2xl font-bold text-white">Detailed Analytics</h3>
                                             </div>
                                             <div className="text-[10px] font-black tracking-[0.2em] text-emerald-500/60 uppercase">
                                                 Verified Result
                                             </div>
                                         </div>
 
-                                        <div className="p-10 space-y-12 flex-grow">
+                                        <div className="p-5 md:p-10 space-y-6 md:space-y-12 flex-grow">
                                             <div className="space-y-2">
                                                 <p className="text-xs font-black text-slate-500 uppercase tracking-[0.3em]">Classification Target</p>
-                                                <h4 className="text-5xl font-black text-white capitalize leading-tight">{analysisResult.class}</h4>
+                                                <h4 className="text-3xl md:text-5xl font-black text-white capitalize leading-tight">{analysisResult.class}</h4>
                                             </div>
 
                                             <div className="space-y-4">
                                                 <div className="flex justify-between items-end">
                                                     <p className="text-xs font-black text-slate-500 uppercase tracking-[0.3em]">Match Confidence</p>
-                                                    <span className="text-3xl font-black text-cyan-400">{(analysisResult.confidence * 100).toFixed(1)}%</span>
+                                                    <span className="text-2xl md:text-3xl font-black text-cyan-400">{(analysisResult.confidence * 100).toFixed(1)}%</span>
                                                 </div>
                                                 <div className="h-4 w-full bg-white/5 rounded-full overflow-hidden border border-white/5">
                                                     <motion.div
@@ -245,15 +245,15 @@ function App() {
                                                 )}
                                             </div>
 
-                                            <div className="p-6 rounded-2xl bg-gradient-to-br from-amber-500/10 via-amber-500/5 to-transparent border border-amber-500/20 shadow-xl shadow-amber-900/10">
+                                            <div className="p-4 md:p-6 rounded-2xl bg-gradient-to-br from-amber-500/10 via-amber-500/5 to-transparent border border-amber-500/20 shadow-xl shadow-amber-900/10">
                                                 <p className="text-xs font-black text-amber-500 uppercase tracking-[0.3em] mb-4 flex items-center gap-3">
                                                     <AlertTriangle className="w-5 h-5" /> Disposal Protocol
                                                 </p>
-                                                <p className="text-2xl font-semibold text-amber-100 leading-relaxed font-sans">{analysisResult.disposal}</p>
+                                                <p className="text-lg md:text-2xl font-semibold text-amber-100 leading-relaxed font-sans">{analysisResult.disposal}</p>
                                             </div>
                                         </div>
 
-                                        <div className="px-8 py-5 bg-white/[0.02] border-t border-white/5 flex justify-between items-center text-[10px] text-slate-500 font-bold uppercase tracking-[0.2em]">
+                                        <div className="px-5 py-3 md:px-8 md:py-5 bg-white/[0.02] border-t border-white/5 flex justify-between items-center text-[10px] text-slate-500 font-bold uppercase tracking-[0.2em]">
                                             <div className="flex items-center gap-2">
                                                 <div className="w-1.5 h-1.5 rounded-full bg-cyan-500/50"></div>
                                                 ID: {Math.random().toString(36).substr(2, 9).toUpperCase()}

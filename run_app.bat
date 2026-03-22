@@ -5,7 +5,7 @@ echo ==================================================
 
 :: Start the Flask Backend in a new terminal window
 echo [API] Starting Flask Backend...
-start "Biomedical API Backend" cmd /k "call .\.venv\Scripts\activate.bat && set PYTHONPATH=%cd%\backend && python backend\app.py"
+start "Biomedical API Backend" cmd /k "set PYTHONPATH=%cd%\backend && .\.venv\Scripts\python.exe backend\app.py"
 
 :: Delay momentarily to ensure the backend is spinning up
 timeout /t 2 /nobreak >nul
