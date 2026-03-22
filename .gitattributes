@@ -1,0 +1,15 @@
+# AI/ML Project Configurations
+
+# 1. Track heavy PyTorch model weights using Git Large File Storage (LFS)
+# Since you're no longer ignoring them, this prevents GitHub from rejecting large uploads.
+*.pt filter=lfs diff=lfs merge=lfs -text
+*.pth filter=lfs diff=lfs merge=lfs -text
+
+# 2. Tell GitHub Linguist that this is a Machine Learning (Python) project
+# By vendoring the frontend and data folders, GitHub's language bar won't be overwhelmed by JavaScript/HTML.
+# It will predominantly show Python as the main language of the repository.
+frontend/** linguist-vendored
+frontend/package-lock.json linguist-generated
+model_training/data/** linguist-generated
+model_training/runs/** linguist-generated
+model_training/outputs/** linguist-generated
