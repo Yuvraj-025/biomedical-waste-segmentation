@@ -12,7 +12,7 @@ timeout /t 2 /nobreak >nul
 
 :: Start the React Frontend in a new terminal window
 echo [UI] Starting React Frontend...
-start "Biomedical React Frontend" cmd /k "cd frontend && npm run dev -- --open"
+start "Biomedical React Frontend" cmd /k "cd frontend && npm run dev -- --host --open"
 
 echo.
 echo Both services are starting in separate windows!
