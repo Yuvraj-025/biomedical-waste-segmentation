@@ -10,6 +10,7 @@ A complete full-stack machine learning application designed to instantly detect,
 
 ---
 
+
 ## 🌟 Key Features
 
 - **Real-Time Inference**: Connects a sleek React frontend to a fast Flask backend for immediate AI predictions.
