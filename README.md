@@ -8,7 +8,7 @@
 
 A complete full-stack machine learning application designed to instantly detect, classify, and provide the correct disposal protocols for hazardous biomedical waste using a custom-trained **YOLOv8** computer vision model.
 
-👤 My Role: Connected the model to the backend and helped display the prediction results on the frontend
+My Role: Connected the model to the backend and helped display the prediction results on the frontend.
 ---
 
 
